@@ -11,4 +11,15 @@ public class Customer
     {
         return $"Name: {FirstName} {LastName}, Email: {Email}, Phone: {PhoneNumber}";
     }
+
+    public static bool ValidateName(string name)
+    {
+        int letterCount = name.Count(char.IsLetter);
+        return letterCount >= 3;
+    }
+
+    public static bool ValidateEmail(string email)
+    {
+        return email.Contains("@");
+    }
 }

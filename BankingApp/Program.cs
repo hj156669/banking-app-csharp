@@ -3,14 +3,50 @@
 Console.WriteLine("Willkommen zur Banking-App!");
 Console.WriteLine("Bitte geben Sie die Kundendaten ein:");
 
-Console.Write("Vorname: ");
-string firstName = Console.ReadLine() ?? string.Empty;
+string firstName = "";
+while (true)
+{
+    Console.Write("Vorname: ");
+    firstName = Console.ReadLine() ?? string.Empty;
+    if (!Customer.ValidateName(firstName))
+    {
+        Console.WriteLine("Fehler: Der Vorname muss mindestens 3 Buchstaben enthalten.");
+    }
+    else
+    {
+        break;
+    }
+}
 
-Console.Write("Nachname: ");
-string lastName = Console.ReadLine() ?? string.Empty;
+string lastName = "";
+while (true)
+{
+    Console.Write("Nachname: ");
+    lastName = Console.ReadLine() ?? string.Empty;
+    if (!Customer.ValidateName(lastName))
+    {
+        Console.WriteLine("Fehler: Der Nachname muss mindestens 3 Buchstaben enthalten.");
+    }
+    else
+    {
+        break;
+    }
+}
 
-Console.Write("E-Mail: ");
-string email = Console.ReadLine() ?? string.Empty;
+string email = "";
+while (true)
+{
+    Console.Write("E-Mail: ");
+    email = Console.ReadLine() ?? string.Empty;
+    if (!Customer.ValidateEmail(email))
+    {
+        Console.WriteLine("Fehler: Die E-Mail-Adresse muss ein \"@\" enthalten.");
+    }
+    else
+    {
+        break;
+    }
+}
 
 Console.Write("Telefonnummer: ");
 string phoneNumber = Console.ReadLine() ?? string.Empty;
